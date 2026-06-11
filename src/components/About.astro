@@ -1,55 +1,33 @@
 ---
-import { ShieldCheck, Target, Award, Eye } from 'lucide-react';
+// Section À Propos — Dev Web MAMPUYA
 ---
-
-<section id="about" class="py-32 bg-dark-900 text-premium-white relative overflow-hidden">
-  <div class="container mx-auto max-w-6xl px-4">
+<section id="about" class="py-32 bg-dark-900 relative">
+  <div class="container mx-auto px-4 max-w-6xl">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       
-      <!-- Bloc Graphique Animé -->
-      <div class="relative p-8 border border-white/10 rounded-3xl bg-dark-800/50 backdrop-blur-md shadow-glass">
-        <div class="absolute top-0 right-0 p-4 text-premium-neon/20 font-mono text-9xl font-black select-none">360°</div>
-        <h2 class="text-xs uppercase font-bold tracking-widest text-premium-gold mb-4">Qui sommes-nous ?</h2>
-        <h3 class="text-3xl md:text-4xl font-black uppercase mb-6 tracking-tight">Le moteur technologique de votre croissance.</h3>
-        
-        <p class="text-premium-gray font-light leading-relaxed mb-6">
-          Basée au cœur de Kinshasa, <strong class="text-premium-white">DEV WEB MAMPUYA</strong> s'est imposée comme le partenaire d'élite pour les organisations ambitieuses en République Démocratique du Congo et à l'international. 
-        </p>
-        <p class="text-premium-gray font-light leading-relaxed">
-          Nous ne concevons pas simplement des sites internet : nous injectons de l'intelligence artificielle, créons des identités de marque mémorables et bâtissons des systèmes d'acquisition marketing automatisés capables de transformer chaque clic en flux de trésorerie net.
-        </p>
+      <!-- Bloc Image de Devesteur -->
+      <div class="relative group max-w-sm mx-auto lg:mx-0 w-full">
+        <div class="absolute -inset-1 bg-gradient-to-r from-[#00FF66] to-[#D4AF37] rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+        <div class="relative bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden aspect-square">
+          <img 
+            src="/devesteur.jpg" 
+            alt="Devesteur Benjamin Mampuya - Fondateur & Web Developer" 
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+          />
+        </div>
       </div>
 
-      <!-- Piliers Stratégiques -->
+      <!-- Bloc Texte Stratégique -->
       <div class="space-y-6">
-        <div class="p-6 rounded-2xl bg-dark-800/30 border border-white/5 hover:border-premium-gold/20 transition-all">
-          <div class="flex gap-4 items-start">
-            <div class="p-3 bg-premium-gold/10 text-premium-gold rounded-xl"><Target class="w-6 h-6" /></div>
-            <div>
-              <h4 class="text-lg font-bold uppercase tracking-wider mb-2">Notre Mission</h4>
-              <p class="text-sm text-premium-gray font-light">Donner aux entreprises africaines l'accès aux meilleures architectures technologiques et de design mondiales pour dominer leurs marchés respectifs.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-dark-800/30 border border-white/5 hover:border-premium-neon/20 transition-all">
-          <div class="flex gap-4 items-start">
-            <div class="p-3 bg-premium-neon/10 text-premium-neon rounded-xl"><Eye class="w-6 h-6" /></div>
-            <div>
-              <h4 class="text-lg font-bold uppercase tracking-wider mb-2">Notre Vision</h4>
-              <p class="text-sm text-premium-gray font-light">Devenir la référence absolue de la transformation digitale haut de gamme en Afrique Subsaharienne d'ici les prochaines années.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-dark-800/30 border border-white/5 hover:border-white/20 transition-all">
-          <div class="flex gap-4 items-start">
-            <div class="p-3 bg-white/10 text-premium-white rounded-xl"><Award class="w-6 h-6" /></div>
-            <div>
-              <h4 class="text-lg font-bold uppercase tracking-wider mb-2">Nos Valeurs</h4>
-              <p class="text-sm text-premium-gray font-light">Performance brute, transparence radicale, esthétique sans compromis et obsession du retour sur investissement client.</p>
-            </div>
-          </div>
+        <h2 class="text-xs uppercase font-bold tracking-widest text-[#00FF66]">L'Ingénierie Derrière l'Agence</h2>
+        <p class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">Devesteur Benjamin Mampuya</p>
+        <p class="text-neutral-400 font-light leading-relaxed">
+          Diplômé en Informatique de Gestion et expert en architectures Web modernes, je propulse la transformation numérique des entreprises. À travers <strong class="text-white">Dev Web MAMPUYA</strong>, nous concevons des écosystèmes complets mêlant applications hautes performances (Astro, Laravel), designs Awwwards d'élite et automatisation intelligente par l'IA.
+        </p>
+        <div class="pt-4">
+          <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#00FF66] hover:text-[#D4AF37] transition-colors">
+            Travailler ensemble <span>→</span>
+          </a>
         </div>
       </div>
 

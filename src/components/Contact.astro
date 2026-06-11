@@ -1,69 +1,33 @@
 ---
-// Composant Contact 100% Validé Formspree - Dev Web MAMPUYA
+// Section Contact — Dev Web MAMPUYA (Formspree Validé)
 ---
-
 <section id="contact" class="py-32 bg-black relative overflow-hidden">
-  <div class="absolute top-1/4 -left-1/4 w-96 h-96 bg-[#00FF66]/10 rounded-full blur-[120px]"></div>
-  <div class="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[120px]"></div>
-
   <div class="container mx-auto max-w-4xl px-4 relative z-10">
     <div class="text-center mb-16">
       <h2 class="text-xs uppercase font-bold tracking-widest text-[#00FF66] mb-4">Lancement de Projet</h2>
       <p class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">Prêt à Dominer Votre Marché ?</p>
-      <p class="text-neutral-400 mt-4 max-w-xl mx-auto font-light text-sm">
-        Remplissez ce formulaire d'analyse stratégique. La direction vous recontacte sous 24 heures ouvrées.
-      </p>
     </div>
 
-    <form 
-      action="https://formspree.io/f/xrevaper" 
-      method="POST" 
-      class="space-y-6 bg-neutral-900/50 p-8 md:p-12 rounded-2xl border border-white/5 backdrop-blur-xl"
-    >
+    <form action="https://formspree.io/f/xrevaper" method="POST" class="space-y-6 bg-neutral-900/50 p-8 md:p-12 rounded-2xl border border-white/5 backdrop-blur-xl">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label for="name" class="block text-xs uppercase tracking-wider text-neutral-400 font-bold mb-2">Votre Nom / Entreprise</label>
-          <input 
-            type="text" 
-            id="name" 
-            name="name" 
-            required 
-            placeholder="Ex: Dev Web MAMPUYA" 
-            class="w-full bg-black/60 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00FF66] transition-colors"
-          />
+          <input type="text" id="name" name="name" required placeholder="Ex: Dev Web MAMPUYA" class="w-full bg-black/60 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00FF66] transition-colors" />
         </div>
         <div>
           <label for="email" class="block text-xs uppercase tracking-wider text-neutral-400 font-bold mb-2">Adresse Email</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            required 
-            placeholder="Ex: contact@mampuya.com" 
-            class="w-full bg-black/60 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00FF66] transition-colors"
-          />
+          <input type="email" id="email" name="email" required placeholder="Ex: contact@mampuya.com" class="w-full bg-black/60 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00FF66] transition-colors" />
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label for="phone" class="block text-xs uppercase tracking-wider text-neutral-400 font-bold mb-2">Numéro Téléphone / WhatsApp</label>
-          <input 
-            type="tel" 
-            id="phone" 
-            name="phone" 
-            required
-            placeholder="Ex: +243 833 583 517" 
-            class="w-full bg-black/60 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00FF66] transition-colors"
-          />
+          <input type="tel" id="phone" name="phone" required placeholder="Ex: +243 833 583 517" class="w-full bg-black/60 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00FF66] transition-colors" />
         </div>
         <div>
           <label for="budget" class="block text-xs uppercase tracking-wider text-neutral-400 font-bold mb-2">Budget Estimé</label>
-          <select 
-            id="budget" 
-            name="budget" 
-            class="w-full bg-black/60 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00FF66] transition-colors"
-          >
+          <select id="budget" name="budget" class="w-full bg-black/60 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00FF66] transition-colors">
             <option value="Standard">Moins de 1 500 $</option>
             <option value="Premium" selected>1 500 $ - 5 000 $</option>
             <option value="Enterprise">Plus de 5 000 $</option>
@@ -73,24 +37,14 @@
 
       <div>
         <label for="message" class="block text-xs uppercase tracking-wider text-neutral-400 font-bold mb-2">Description du besoin</label>
-        <textarea 
-          id="message" 
-          name="message" 
-          rows="5" 
-          required 
-          placeholder="Décrivez votre projet, vos objectifs et vos fonctionnalités clés..." 
-          class="w-full bg-black/60 border border-white/10 rounded-lg px-4 py-5 text-white text-sm focus:outline-none focus:border-[#00FF66] transition-colors resize-none"
-        ></textarea>
+        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet..." class="w-full bg-black/60 border border-white/10 rounded-lg px-4 py-5 text-white text-sm focus:outline-none focus:border-[#00FF66] transition-colors resize-none"></textarea>
       </div>
 
       <div class="text-center pt-4">
-        <button 
-          type="submit" 
-          class="inline-block bg-[#00FF66] text-black font-black uppercase text-xs tracking-widest px-8 py-4 rounded-lg hover:bg-white transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer shadow-[0_4px_20px_rgba(0,255,102,0.2)]"
-        >
+        <button type="submit" class="inline-block bg-[#00FF66] text-black font-black uppercase text-xs tracking-widest px-8 py-4 rounded-lg hover:bg-white transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer shadow-[0_4px_20px_rgba(0,255,102,0.2)]">
           Envoyer la Demande de Briefing
         </button>
       </div>
     </form>
   </div>
-</se
+</section>
