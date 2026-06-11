@@ -1,92 +1,82 @@
 ---
-import { Code2, Cpu, BarChart3, Palette, LayoutGrid, Layers } from 'lucide-react';
+// Services.astro — Agence Digitale DEV WEB MAMPUYA
+import { Code2, LayoutDashboard, Cpu, MessageSquareCode, Globe, Smartphone } from 'lucide-react';
 
 const services = [
   {
     icon: Code2,
-    title: "Développement Web & Full Stack",
-    desc: "Sites vitrines d'élite, architectures JAMstack (Astro, Next.js), et applications métier sur-mesure ultra-rapides.",
-    cta: "Créer mon site web"
+    title: "Ingénierie Web & Applications",
+    description: "Développement d'architectures robustes, d'applications métiers sur mesure et de plateformes SaaS hautement scalables."
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Solutions Core Banking & FinTech",
+    description: "Conception de systèmes de microfinance et de core banking modernes, sécurisés et adaptés aux réalités du marché."
   },
   {
     icon: Cpu,
-    title: "Intelligence Artificielle & Chatbots",
-    desc: "Automatisation de vos processus, intégrations d'API OpenAI et agents conversationnels automatisés sur WhatsApp.",
-    cta: "Automatiser mon business"
+    title: "Intégration IA & IoT (AIoT)",
+    description: "Automatisation intelligente, interconnexion d'objets connectés et déploiement de modèles d'IA pour optimiser vos processus."
   },
   {
-    icon: BarChart3,
-    title: "Growth Marketing & Acquisition Ads",
-    desc: "Campagnes chirurgicales Facebook Ads, Instagram Ads et optimisation de conversion (CRO) pour maximiser votre ROI.",
-    cta: "Acquérir des clients"
+    icon: Globe,
+    title: "Sites Vitrines & Écosystèmes 360°",
+    description: "Création de sites premium à forte conversion, optimisés pour le SEO et offrant des performances d'affichage instantanées."
   },
   {
-    icon: Palette,
-    title: "Branding & Identité Visuelle",
-    desc: "Création de logos vectoriels premium, chartes graphiques fortes, design d'affiches professionnelles et montage vidéo.",
-    cta: "Propulser ma marque"
+    icon: Smartphone,
+    title: "Applications Mobiles Cross-Platform",
+    description: "Développement d'expériences mobiles fluides et intuitives sur iOS et Android à partir d'une base de code unique."
   },
   {
-    icon: LayoutGrid,
-    title: "E-Commerce de Haute Performance",
-    desc: "Conception de boutiques en ligne sous Shopify ou WooCommerce, optimisées pour la conversion de trafic froid.",
-    cta: "Lancer ma boutique"
-  },
-  {
-    icon: Layers,
-    title: "SEO Référencement International",
-    desc: "Positionnement stratégique sur Google pour dominer vos marchés locaux en Afrique et à l'échelle internationale.",
-    cta: "Dominer Google"
+    icon: MessageSquareCode,
+    title: "Consulting Stratégique & DBA",
+    description: "Audit d'architecture, optimisation de bases de données complexes (PostgreSQL) et accompagnement technique de pointe."
   }
 ];
 ---
 
-<section id="services" class="py-32 bg-dark-800 relative">
-  <div class="container mx-auto max-w-6xl px-4">
-    <div class="text-center mb-20">
-      <h2 class="text-xs uppercase font-bold tracking-widest text-premium-neon mb-4">Notre Expertise Tech & Marketing</h2>
-      <p class="text-3xl md:text-5xl font-black text-premium-white tracking-tight uppercase">Des solutions digitales de classe mondiale</p>
+<section id="services" class="py-24 bg-black border-b border-white/5 relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,255,102,0.03),transparent_50%)]"></div>
+  
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-3xl mb-16">
+      <span class="text-xs font-bold tracking-widest text-[#00FF66] uppercase bg-[#00FF66]/10 px-3 py-1 rounded-full">
+        Nos Expertises
+      </span>
+      <h2 class="text-4xl md:text-5xl font-black tracking-tight text-white mt-4 mb-6 uppercase">
+        Des solutions digitales d'élite <br />pour propulser votre business.
+      </h2>
+      <p class="text-neutral-400 text-lg">
+        Nous fusionnons design de pointe, ingénierie logicielle avancée et architectures modernes pour créer un impact réel sur votre croissance.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {services.map((svc) => {
-        const IconComponent = svc.icon;
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((service) => {
+        const IconComponent = service.icon;
         return (
-          <div class="service-card group relative p-8 rounded-2xl bg-dark-700/40 border border-white/5 backdrop-blur-xl hover:border-premium-neon/30 transition-all duration-500 overflow-hidden shadow-glass">
-            <div class="absolute -top-10 -right-10 w-32 h-32 bg-premium-neon/5 rounded-full blur-2xl group-hover:bg-premium-neon/10 transition-all"></div>
-            
-            <div class="p-4 bg-dark-600 rounded-xl w-fit mb-6 text-premium-white group-hover:text-premium-neon transition-colors duration-300">
-              <IconComponent class="w-8 h-8" />
+          <div class="group bg-neutral-950 border border-white/5 hover:border-[#00FF66]/30 p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-[#00FF66]/10 group-hover:text-[#00FF66] group-hover:border-[#00FF66]/20 transition-all duration-300 mb-6">
+                {/* Correction TypeScript : Utilisation de className au lieu de class */}
+                <IconComponent className="w-6 h-6" />
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-[#00FF66] transition-colors duration-300">
+                {service.title}
+              </h3>
+              <p class="text-neutral-400 text-sm leading-relaxed">
+                {service.description}
+              </p>
             </div>
-
-            <h3 class="text-xl font-bold text-premium-white mb-4 group-hover:text-premium-white">{svc.title}</h3>
-            <p class="text-premium-gray text-sm leading-relaxed mb-6 font-light">{svc.desc}</p>
             
-            <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-premium-gold group-hover:text-premium-neon transition-colors">
-              <span>{svc.cta}</span>
-              <span class="transform group-hover:translate-x-1 transition-transform">→</span>
-            </a>
+            <div class="mt-6 pt-6 border-t border-white/5 flex items-center text-xs font-bold tracking-wider text-neutral-500 group-hover:text-white transition-colors duration-300 uppercase gap-2">
+              En savoir plus 
+              <span class="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </div>
           </div>
-        )
+        );
       })}
     </div>
   </div>
 </section>
-
-<script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.from(".service-card", {
-    scrollTrigger: {
-      trigger: "#services",
-      start: "top 75%",
-    },
-    y: 50,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: "power2.out"
-  });
-</script>
