@@ -1,0 +1,75 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalURL?: string;
+}
+
+const { 
+  title, 
+  description, 
+  image = '/og-image.jpg', 
+  canonicalURL = Astro.url.href 
+} = Astro.props;
+
+// Schema.org complet pour l'agence locale et internationale
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "DEV WEB MAMPUYA",
+  "image": "https://devwebmampuya.com/og-image.jpg",
+  "@id": "https://devwebmampuya.com/#organization",
+  "url": "https://devwebmampuya.com",
+  "telephone": "+243833583517",
+  "priceRange": "$$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Boulevard du 30 Juin",
+    "addressLocality": "Kinshasa",
+    "addressCountry": "CD"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-4.322447",
+    "longitude": "15.307045"
+  },
+  "sameAs": [
+    "https://facebook.com/devwebmampuya",
+    "https://instagram.com/devwebmampuya"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "08:00",
+    "closes": "20:00"
+  }
+};
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<link rel="canonical" href={canonicalURL} />
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />

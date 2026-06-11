@@ -1,0 +1,30 @@
+---
+const steps = [
+  { num: "01", name: "Découverte", desc: "Immersion analytique complète de vos processus et extraction de vos objectifs business réels." },
+  { num: "02", name: "Stratégie", desc: "Modélisation de l'écosystème d'acquisition et choix de l'architecture logicielle optimale." },
+  { num: "03", name: "Conception", desc: "Prototypes UI/UX haute fidélité axés conversion sous Figma suivant les standards Awwwards." },
+  { num: "04", name: "Développement", desc: "Production du code sous Astro 5 et Tailwind 4, propre, typé en TypeScript et ultra-rapide." },
+  { num: "05", name: "Tests", desc: "Assurance qualité stricte (QA), tests de charge et optimisation de vitesse Lighthouse à 100%." },
+  { num: "06", name: "Déploiement", desc: "Mise en ligne sur CDN mondial sécurisé (Vercel/Netlify) couplé à une configuration DNS pro." },
+  { num: "07", name: "Support", desc: "Supervision applicative, maintenance de sécurité réactive et analytics de conversion continus." }
+];
+---
+
+<section id="processus" class="py-32 bg-dark-800 text-premium-white relative">
+  <div class="container mx-auto max-w-6xl px-4">
+    <div class="mb-20">
+      <h2 class="text-xs uppercase font-bold tracking-widest text-premium-neon mb-4">Notre Protocole d'Exécution</h2>
+      <p class="text-3xl md:text-5xl font-black uppercase tracking-tight">Zéro hasard. Une ingénierie méthodique.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((step) => (
+        <div class="process-node relative p-6 bg-dark-700/50 border border-white/5 rounded-2xl hover:border-premium-gold/30 transition-all">
+          <div class="text-4xl font-black text-premium-gold/10 font-mono mb-4">{step.num}</div>
+          <h3 class="text-lg font-bold uppercase tracking-wider mb-2 text-premium-white">{step.name}</h3>
+          <p class="text-xs text-premium-gray font-light leading-relaxed">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,88 @@
+---
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import TechSlider from '../components/TechSlider.astro';
+import Process from '../components/Process.astro';
+import Footer from '../components/Footer.astro';
+import BaseHead from '../components/BaseHead.astro';
+
+// Importations sécurisées des composants natifs
+import Portfolio from '../components/Portfolio.astro';
+import FAQ from '../components/FAQ.astro';
+import Contact from '../components/Contact.astro';
+
+const pageTitle = "DEV WEB MAMPUYA | Agence Digitale Premium & Solutions IA";
+const pageDescription = "Ingénierie web de classe mondiale, intégration d'intelligences artificielles et systèmes de conversion marketing haute performance basés à Kinshasa.";
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <BaseHead title={pageTitle} description={pageDescription} />
+    
+    <!-- Injection Directe et Autonome de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com" is:inline></script>
+    <script is:inline>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: {
+                900: '#030303',
+                800: '#0A0A0A',
+                700: '#121212',
+                600: '#1A1A1A'
+              },
+              premium: {
+                neon: '#00FF66',
+                gold: '#D4AF37',
+                white: '#FAFAFA',
+                gray: '#8E8E93'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style is:inline>
+      /* Assure la réinitialisation matérielle du thème de l'agence */
+      body {
+        background-color: #030303 !important;
+        color: #FAFAFA !important;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      /* Cache l'affreuse barre de défilement par défaut */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #030303;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1A1A1A;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #00FF66;
+      }
+    </style>
+  </head>
+  <body class="bg-dark-900 text-white antialiased selection:bg-[#00FF66]/20 selection:text-[#00FF66]">
+    <Header />
+    <main>
+      <Hero />
+      <Services />
+      <About />
+      <TechSlider />
+      <Portfolio />
+      <Process />
+      <FAQ />
+      <Contact />
+    </main>
+    <Footer />
+  </body>
+</html>

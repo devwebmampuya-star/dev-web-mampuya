@@ -1,0 +1,39 @@
+---
+const technologies = [
+  "Astro", "TailwindCSS", "React", "Next.js", "Node.js", "Laravel", 
+  "PHP", "MySQL", "MongoDB", "Firebase", "Docker", "GitHub", 
+  "Shopify", "WordPress", "WooCommerce", "OpenAI"
+];
+---
+
+<section class="py-16 bg-dark-900 border-y border-white/5 overflow-hidden relative w-full">
+  <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-dark-900 to-transparent z-10 pointer-events-none"></div>
+  <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-dark-900 to-transparent z-10 pointer-events-none"></div>
+
+  <div class="flex whitespace-nowrap align-middle">
+    <div class="animate-marquee flex gap-16 items-center">
+      {technologies.map((tech) => (
+        <span class="text-3xl md:text-5xl font-black tracking-tighter uppercase text-dark-600 hover:text-premium-neon transition-colors duration-300 select-none cursor-default">
+          {tech}
+        </span>
+      ))}
+    </div>
+    <div class="animate-marquee flex gap-16 items-center" aria-hidden="true">
+      {technologies.map((tech) => (
+        <span class="text-3xl md:text-5xl font-black tracking-tighter uppercase text-dark-600 hover:text-premium-neon transition-colors duration-300 select-none cursor-default">
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+</style>

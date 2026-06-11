@@ -1,0 +1,42 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CustomCursor from '../components/CustomCursor';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth bg-dark-900 selection:bg-premium-neon selection:text-dark-900">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body class="overflow-x-hidden antialiased font-sans bg-radial-gradient-dark">
+    <!-- Barre de Progression globale de lecture -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-premium-neon to-premium-gold z-50 transition-all duration-75 w-0"></div>
+
+    <CustomCursor client:load />
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<script>
+  // Gestion de la barre de progression au scroll
+  window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) progressBar.style.width = scrolled + '%';
+  });
+</script>

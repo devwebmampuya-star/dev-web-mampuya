@@ -1,0 +1,92 @@
+---
+import { Code2, Cpu, BarChart3, Palette, LayoutGrid, Layers } from 'lucide-react';
+
+const services = [
+  {
+    icon: Code2,
+    title: "Développement Web & Full Stack",
+    desc: "Sites vitrines d'élite, architectures JAMstack (Astro, Next.js), et applications métier sur-mesure ultra-rapides.",
+    cta: "Créer mon site web"
+  },
+  {
+    icon: Cpu,
+    title: "Intelligence Artificielle & Chatbots",
+    desc: "Automatisation de vos processus, intégrations d'API OpenAI et agents conversationnels automatisés sur WhatsApp.",
+    cta: "Automatiser mon business"
+  },
+  {
+    icon: BarChart3,
+    title: "Growth Marketing & Acquisition Ads",
+    desc: "Campagnes chirurgicales Facebook Ads, Instagram Ads et optimisation de conversion (CRO) pour maximiser votre ROI.",
+    cta: "Acquérir des clients"
+  },
+  {
+    icon: Palette,
+    title: "Branding & Identité Visuelle",
+    desc: "Création de logos vectoriels premium, chartes graphiques fortes, design d'affiches professionnelles et montage vidéo.",
+    cta: "Propulser ma marque"
+  },
+  {
+    icon: LayoutGrid,
+    title: "E-Commerce de Haute Performance",
+    desc: "Conception de boutiques en ligne sous Shopify ou WooCommerce, optimisées pour la conversion de trafic froid.",
+    cta: "Lancer ma boutique"
+  },
+  {
+    icon: Layers,
+    title: "SEO Référencement International",
+    desc: "Positionnement stratégique sur Google pour dominer vos marchés locaux en Afrique et à l'échelle internationale.",
+    cta: "Dominer Google"
+  }
+];
+---
+
+<section id="services" class="py-32 bg-dark-800 relative">
+  <div class="container mx-auto max-w-6xl px-4">
+    <div class="text-center mb-20">
+      <h2 class="text-xs uppercase font-bold tracking-widest text-premium-neon mb-4">Notre Expertise Tech & Marketing</h2>
+      <p class="text-3xl md:text-5xl font-black text-premium-white tracking-tight uppercase">Des solutions digitales de classe mondiale</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {services.map((svc) => {
+        const IconComponent = svc.icon;
+        return (
+          <div class="service-card group relative p-8 rounded-2xl bg-dark-700/40 border border-white/5 backdrop-blur-xl hover:border-premium-neon/30 transition-all duration-500 overflow-hidden shadow-glass">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-premium-neon/5 rounded-full blur-2xl group-hover:bg-premium-neon/10 transition-all"></div>
+            
+            <div class="p-4 bg-dark-600 rounded-xl w-fit mb-6 text-premium-white group-hover:text-premium-neon transition-colors duration-300">
+              <IconComponent class="w-8 h-8" />
+            </div>
+
+            <h3 class="text-xl font-bold text-premium-white mb-4 group-hover:text-premium-white">{svc.title}</h3>
+            <p class="text-premium-gray text-sm leading-relaxed mb-6 font-light">{svc.desc}</p>
+            
+            <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-premium-gold group-hover:text-premium-neon transition-colors">
+              <span>{svc.cta}</span>
+              <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+        )
+      })}
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".service-card", {
+    scrollTrigger: {
+      trigger: "#services",
+      start: "top 75%",
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: "power2.out"
+  });
+</script>
